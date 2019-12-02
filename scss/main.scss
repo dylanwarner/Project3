@@ -1,0 +1,520 @@
+$backgroundColor: #F2F2F2;
+$buttonColor: #1CAEF2;
+$input-font-size: 0.8em;
+$input-line-height: 70px;
+$font-family: 'Roboto', sans-serif;
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: $backgroundColor;
+}
+
+#logo {
+    height: 40px;
+    width: 40;
+    padding-top: 5px;
+    float:left;
+    border-radius: 8px;
+}
+
+#ad {
+    float: right;
+    border: 1px solid black;
+    width: 300px;
+    height: 500px;
+    margin-top: 78px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+nav {
+    width: 100%;
+    height: 50px;
+    //background-color: $buttonColor;
+}
+
+#navnav {
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+nav:nth-child(1) {
+    padding-left: 25px;
+}
+
+.navlink {
+    padding: 5px;
+    padding-top: 12px;
+    padding-left: 20px;
+    color: white;
+    font-size: 1.3em;
+    float: left;
+}
+
+.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: $buttonColor;
+    transition: background-color 0.4s ease;
+}
+
+.navlink a:hover {
+    transition: background-color 0.8s ease;
+    background-color: #66bdff;
+}
+
+.mainForm {
+    height: 300px;
+    width: 350px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    background-color: white;
+    padding-top: 50px;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 75px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.mainForm h3 {
+    text-align: center;
+}
+
+.mainForm label {
+    display: block;
+    margin-right: 10px;
+    padding-bottom: 15px;
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    float: left;
+}
+
+.noteForm {
+    height: 300px;
+    width: 350px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    background-color: white;
+    padding-top: 60px;
+    padding-left: 35px;
+    padding-right: 35px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+#profileWindow {
+    height: 450px;
+    width: 350px;
+    margin: 0 auto;
+    font-size: 1.2em;
+    text-align: center;
+    display: block;
+    background-color: white;
+    padding-top: 60px;
+    padding-left: 35px;
+    padding-right: 35px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.noteForm label {
+    display: block;
+    margin-right: 10px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: 0.8em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    float: left;
+}
+
+#noteTitle, #note {
+    height: 35px;
+    width: 100%;
+    min-width: 100%;
+    padding: 0;
+    border-radius: 0;
+    font-size: $input-font-size;
+    font-family: $font-family;
+    line-height: $input-line-height;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 3px solid lightgray;
+}
+
+.formSubmit {
+    transition: background-color 0.4s ease;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 14px;
+    font-size: 0.7em;
+    width: 150px;
+    background-color: $buttonColor;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 0px;
+    color: white;
+    text-decoration: none;
+}
+
+.logout {
+    transition: background-color 0.4s ease;
+    font-family: $font-family;
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    font-size: 0.8em;
+    width: 100px;
+    background-color: $buttonColor;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 0px;
+    color: white;
+    text-decoration: none;
+}
+
+.logout:hover {
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.formSubmit:link, .formSubmit:visited, .formSubmit:hover, .formSubmit:active {
+    color: white;
+}
+
+.formSubmit:hover {
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#user, #pass, #pass2 {
+    height: 35px;
+    width: 100%;
+    min-width: 100%;
+    padding: 0;
+    border-radius: 0;
+    font-size: $input-font-size;
+    font-family: $font-family;
+    line-height: $input-line-height;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 3px solid lightgray;
+
+    &:focus {
+        + .input-highlight {
+        border-top: 3px solid #fbc91b;
+    }
+    }
+}
+
+#noteTitle, #note {
+    height: 35px;
+    width: 200px;
+    padding: 0;
+    border-radius: 0;
+    font-size: $input-font-size;
+    font-family: $font-family;
+    line-height: $input-line-height;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 3px solid lightgray;
+}
+
+.input-highlight {
+    font-size: $input-font-size;
+    line-height: $input-line-height;
+    font-family: $font-family;
+    border-top: 3px solid #30D9A9;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    max-width: 100%;
+    color: transparent;
+    user-select: none;
+    overflow: hidden;
+}
+
+.input-wrapper {
+    margin: 30px auto;
+    position: relative;
+}
+
+#user:focus, #pass:focus, #pass2:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 1px #55acee;
+}
+
+#speech {
+    height: 120px;
+    width: 250px;
+    z-index:300;
+}
+
+#errorMessage {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+}
+
+#notes {
+    width: 40%;
+    min-width: 400px;
+    border-radius: 4px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.note {
+    width: 100%;
+    height: 150px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    background-color: white;
+    overflow-y: auto;
+    padding: 10px;
+    min-height:60px;
+    border-left: 20px solid #55acee;
+}
+
+h3.emptyNote {
+    width: 400px;
+    font-family: 'Vollkorn', serif;
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 18px;
+}
+
+.input_div {
+    float: left;
+}
+
+p {
+    font-size: 0.8em;
+    font-family: $font-family;
+}
+
+.signup_link {
+    color: $buttonColor;
+}
+
+li {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #031D44;
+    padding: 20px 0px;
+    margin: 0px 20px;
+    display: inline-block;
+    position: relative;
+    opacity: 0.75;
+}
+
+.nav-link:hover {
+    opacity: 1;
+}
+  
+.nav-link::before {
+    transition: 300ms;
+    height: 3px;
+    content: "";
+    position: absolute;
+    background-color: black;
+}
+  
+.nav-link-ltr::before {
+    width: 0%;
+    bottom: 10px;
+}
+
+.nav-link-ltr::before:focus {
+    bottom: 10px;
+}
+
+.nav-link-ltr {
+    font-family: $font-family;
+    font-size: 0.85em;
+}
+
+.nav-link-ltr:hover::before {
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Vollkorn', serif;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#errorAlert {
+    width: 250px;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    border-left: 20px solid red;
+    margin: 0 auto;
+    display: none;
+    text-align: center;
+}
+
+.errorType {
+    font-family: $font-family;
+    font-size: $input-font-size;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.alertMsg {
+    font-family: $font-family;
+    font-size: $input-font-size;
+    text-align: left;
+    padding-left: 15px;
+    color: #878787;
+}
+
+#alertWrapper {
+
+}
+
+#alertWrapperSign {
+}
+
+#errorAlertSign {
+    width: 250px;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+    border-left: 20px solid red;
+    margin: 0 auto;
+    display: none;
+    text-align: center;
+}
+
+.errorTypeSign {
+    font-family: $font-family;
+    font-size: $input-font-size;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.alertMsgSign {
+    font-family: $font-family;
+    font-size: $input-font-size;
+    text-align: left;
+    padding-left: 15px;
+    color: #878787;
+}
+
+#makeNote {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.makeNoteSubmit {
+    transition: background-color 0.4s ease;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 0.7em;
+    width: 150px;
+    background-color: $buttonColor;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 0px;
+    color: white;
+    text-decoration: none;
+}
+
+#changePassButton {
+    transition: background-color 0.4s ease;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 0.7em;
+    font-family: $font-family;
+    width: 150px;
+    background-color: $buttonColor;
+    border: none;
+    border-radius: 2px;
+    padding: 10px 0px;
+    color: white;
+    text-decoration: none;
+}
+
+.makeNoteSubmit:hover {
+    opacity: 0.8;
+}
+
+.noteList {
+
+}
+
+h3.noteTitle {
+    font-family: 'Karla', sans-serif;
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+p.noteNote {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+}
+
+p.noteDate {
+    padding-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: $font-family;
+    opacity: 0.5;
+}

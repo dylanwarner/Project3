@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Notes</title>
+  <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+  <!-- <link rel="shortcut icon" href="/assets/img/favicon.png"/> -->
+  <!-- Text input with expanding bottom border source -->
+  <!-- https://www.adlibweb.com/text-input-with-expanding-bottom-border/amp/ -->
+  <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+</head>
+<body> 
+  <h1>Notes.</h1>
+  <div class="navbar">
+    <a id="loginButton" class="nav-link nav-link-ltr" href="/login">Login</a>
+    <a id="signupButton" class="nav-link nav-link-ltr" href="/signup">Signup</a>
+  </div>
+  <section id="content">
+  </section>
+  <div id="alertWrapper">
+  <div id="errorAlert">
+    <p class="errorType">Error</p>
+    <p class="alertMsg">Wrong username or password.</p>
+  </div>
+  </div>
+  <div id="alertWrapperSign">
+  <div id="errorAlertSign">
+    <p class="errorTypeSign">Error</p>
+    <p class="alertMsgSign">Wrong username or password.</p>
+  </div>
+  </div>
+  <script src="/assets/loginBundle.js"></script>
+</body>
+</html>

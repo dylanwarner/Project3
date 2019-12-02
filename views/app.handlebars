@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>Notes</title>
+  <script crossorigin src="https://unpkg.com/react@15/dist/react.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+  <script crossorigin src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.6.2/remarkable.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Karla&display=swap" rel="stylesheet">
+  <!-- <link rel="shortcut icon" href="/assets/img/favicon.png"/> -->
+  <link rel="stylesheet" type="text/css" href="/assets/main.css"/>
+</head>
+<body>
+  <nav id="navnav">
+    <a class="logout" href="/logout">Logout</a>
+  </nav>
+  <div class="navbar">
+    <a id="loginButton" class="nav-link nav-link-ltr" href="/maker">My Notes</a>
+    <a id="addNoteButton" class="nav-link nav-link-ltr" href="/maker">Add Note</a>
+    <a id="profileButton" class="nav-link nav-link-ltr" href="/maker">Profile</a>
+  </div>
+  <div id="ad">
+    <p>Ad</p>
+  </div>
+  <section id="notes">
+  </section>
+  <div id="alertWrapper">
+  <div id="errorAlert">
+    <p class="errorType">Error</p>
+    <p class="alertMsg">Wrong username or password.</p>
+  </div>
+  </div>
+  <script src="/assets/appBundle.js"></script>
+</body>
+</html>
