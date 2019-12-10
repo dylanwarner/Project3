@@ -43,13 +43,34 @@ const NoteForm = (props) => {
 
 // render the profile window to the page
 const ProfileWindow = (props) => {
+    console.log(props);
     return (
         <div id="profileWindow">
             <h3>Profile</h3>
             <a id="changePassButton" class="nav-link nav-link-ltr" href="/maker">Change Password</a>
         </div>
     );
-}
+};
+
+// search bar component to render
+const SearchWindow = (props) => {
+    return (
+        <div id="searchWindow">
+            <input id="searchBar" type="text" name="searchBar" placeholder="Type to search..."/>
+            <input className="searchSubmit" type="submit" value="Search"/>
+        </div>
+    );
+};
+
+// bookmarks window to hold bookmarked notes
+const Bookmarks = (props) => {
+    return (
+        <div>
+            <h3 className="noteTitle">Bookmarks:</h3>
+            <h3 className="noteTitle">View your bookmarked notes.</h3>
+        </div>
+    );
+};
 
 // function to create the add note window passing in csrf
 const createAddNoteWindow = (csrf) => {
@@ -65,10 +86,26 @@ const createProfileWindow = (csrf) => {
         <ProfileWindow csrf={csrf} />,
         document.querySelector("#notes")
     );
+};
+
+// function to render search window passing in csrf
+const createSearchWindow = (csrf) => {
+    ReactDOM.render(
+        <SearchWindow csrf={csrf}/>,
+        document.querySelector("#notes")
+    );
+};
+
+const createBookmarkWindow = (csrf) => {
+    ReactDOM.render(
+        <Bookmarks csrf={csrf}/>,
+        document.querySelector("#notes")
+    );
 }
 
 // function to create the empty notelist if no notes have been create, display the msg
 const NoteList = function(props) {
+    
     if(props.notes.length === 0) {
         return (
             <div className="noteList">
@@ -81,6 +118,7 @@ const NoteList = function(props) {
     const noteNodes = props.notes.map(function(note) {
         return (
             <div key={note._id} className="note">
+                <span className="trash">x</span>
                 <h3 className="noteTitle"> {note.title} </h3>
                 <p className="noteNote"> {note.note} </p>
                 <p className="noteDate"> {note.createdData} </p>
@@ -111,6 +149,8 @@ const setup = function(csrf) {
     // grab the buttons for add note and profile windows
     const addNoteButton = document.querySelector('#addNoteButton');
     const profileButton = document.querySelector('#profileButton');
+    const searchButton = document.querySelector('#searchButton');
+    const bookmarkButton = document.querySelector('#bookmarkButton');
     
     // add listener to the add note onclick to create the add note window
     addNoteButton.addEventListener("click", (e) => {
@@ -125,14 +165,27 @@ const setup = function(csrf) {
         createProfileWindow(csrf);
         return false;
     });
-    //ReactDOM.render(
-        //<NoteForm csrf={csrf} />, document.querySelector("#makeNote")
-    //);
+
+    // add listener to the search window to create the search window
+    searchButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        createSearchWindow(csrf);
+        return false;
+    });
+
+    // add listener to the bookmark window to create the bookmark window
+    bookmarkButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        createBookmarkWindow(csrf);
+        return false;
+    });
 
     // render the list of notes empty at first
     ReactDOM.render(
         <NoteList notes={[]} />, document.querySelector("#notes")
     );
+
+
 
     // load the notes from the server
     loadNotesFromServer();

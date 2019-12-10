@@ -58,6 +58,7 @@ var NoteForm = function NoteForm(props) {
 
 
 var ProfileWindow = function ProfileWindow(props) {
+  console.log(props);
   return React.createElement("div", {
     id: "profileWindow"
   }, React.createElement("h3", null, "Profile"), React.createElement("a", {
@@ -65,6 +66,31 @@ var ProfileWindow = function ProfileWindow(props) {
     "class": "nav-link nav-link-ltr",
     href: "/maker"
   }, "Change Password"));
+}; // search bar component to render
+
+
+var SearchWindow = function SearchWindow(props) {
+  return React.createElement("div", {
+    id: "searchWindow"
+  }, React.createElement("input", {
+    id: "searchBar",
+    type: "text",
+    name: "searchBar",
+    placeholder: "Type to search..."
+  }), React.createElement("input", {
+    className: "searchSubmit",
+    type: "submit",
+    value: "Search"
+  }));
+}; // bookmarks window to hold bookmarked notes
+
+
+var Bookmarks = function Bookmarks(props) {
+  return React.createElement("div", null, React.createElement("h3", {
+    className: "noteTitle"
+  }, "Bookmarks:"), React.createElement("h3", {
+    className: "noteTitle"
+  }, "View your bookmarked notes."));
 }; // function to create the add note window passing in csrf
 
 
@@ -77,6 +103,19 @@ var createAddNoteWindow = function createAddNoteWindow(csrf) {
 
 var createProfileWindow = function createProfileWindow(csrf) {
   ReactDOM.render(React.createElement(ProfileWindow, {
+    csrf: csrf
+  }), document.querySelector("#notes"));
+}; // function to render search window passing in csrf
+
+
+var createSearchWindow = function createSearchWindow(csrf) {
+  ReactDOM.render(React.createElement(SearchWindow, {
+    csrf: csrf
+  }), document.querySelector("#notes"));
+};
+
+var createBookmarkWindow = function createBookmarkWindow(csrf) {
+  ReactDOM.render(React.createElement(Bookmarks, {
     csrf: csrf
   }), document.querySelector("#notes"));
 }; // function to create the empty notelist if no notes have been create, display the msg
@@ -96,7 +135,9 @@ var NoteList = function NoteList(props) {
     return React.createElement("div", {
       key: note._id,
       className: "note"
-    }, React.createElement("h3", {
+    }, React.createElement("span", {
+      className: "trash"
+    }, "x"), React.createElement("h3", {
       className: "noteTitle"
     }, " ", note.title, " "), React.createElement("p", {
       className: "noteNote"
@@ -123,7 +164,9 @@ var loadNotesFromServer = function loadNotesFromServer() {
 var setup = function setup(csrf) {
   // grab the buttons for add note and profile windows
   var addNoteButton = document.querySelector('#addNoteButton');
-  var profileButton = document.querySelector('#profileButton'); // add listener to the add note onclick to create the add note window
+  var profileButton = document.querySelector('#profileButton');
+  var searchButton = document.querySelector('#searchButton');
+  var bookmarkButton = document.querySelector('#bookmarkButton'); // add listener to the add note onclick to create the add note window
 
   addNoteButton.addEventListener("click", function (e) {
     e.preventDefault();
@@ -135,10 +178,19 @@ var setup = function setup(csrf) {
     e.preventDefault();
     createProfileWindow(csrf);
     return false;
-  }); //ReactDOM.render(
-  //<NoteForm csrf={csrf} />, document.querySelector("#makeNote")
-  //);
-  // render the list of notes empty at first
+  }); // add listener to the search window to create the search window
+
+  searchButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    createSearchWindow(csrf);
+    return false;
+  }); // add listener to the bookmark window to create the bookmark window
+
+  bookmarkButton.addEventListener("click", function (e) {
+    e.preventDefault();
+    createBookmarkWindow(csrf);
+    return false;
+  }); // render the list of notes empty at first
 
   ReactDOM.render(React.createElement(NoteList, {
     notes: []

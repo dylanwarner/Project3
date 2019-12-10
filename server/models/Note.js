@@ -48,9 +48,11 @@ NoteSchema.statics.findByOwner = (ownerId, callback) => {
     owner: convertId(ownerId),
   };
 
-  // select title note and date 
+  // select title note and date
   return NoteModel.find(search).select('title note createdData').exec(callback);
 };
+
+// find by title
 
 NoteModel = mongoose.model('Note', NoteSchema);
 
